@@ -7,20 +7,19 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
-        
+    <form [formGroup]="loginForm" >
         <div >
         	<img class ="img" src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Logo_Gobierno_de_Espa%C3%B1a.png" >
         </div>
         <h4 class="text-center">Iniciar sesión</h4>
         <div class="form-group has-error">
-        	<input type="text" class="form-control" name="username" placeholder="DNI / Pasaporte / NIE" required="required">
+        	<input type="text" class="form-control" formControlName="ident" placeholder="DNI / Pasaporte / NIE" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Clave" required="required">
+            <input type="password" class="form-control" formControlName="cred" placeholder="Clave" required="required">
         </div>        
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="authUser()">Entrar</button>
         </div>
         <!--  <p><a href="#">Lost your Password?</a></p>-->
     </form>
