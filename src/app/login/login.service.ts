@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
 };
 
 @Injectable()
@@ -21,7 +23,10 @@ export class LoginService {
       .set('identification', ident)
       .set('pass', cred);
 
-    this.http.post('http://localhost:8080/authUser', params, httpOptions).subscribe();
+    console.log(params.get('identification'));
+    console.log(params.get('pass'));
+
+    this.http.post('http://localhost:8080/elecc/authUser?identification=' + ident + '&pass=' + cred, httpOptions).subscribe();
 
   }
 }
