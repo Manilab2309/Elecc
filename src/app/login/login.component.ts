@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     console.log('[Elecc Log]: Autenticando usuario...' + identVal + credVal);
 
     this.loginService.authUser(identVal, credVal);
-    console.log('[Elecc Log]: Autenticación OK');
+    console.log('[Elecc Log]: Autenticación OK ---- ');
 
   }
 

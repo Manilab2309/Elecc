@@ -43,7 +43,7 @@ export class LoginService {
       },
       (err: HttpErrorResponse) => {
         console.log(err.error);
-        console.log(err.name);
+        console.log(err.name);  
         console.log(err.message);
         console.log(err.status);
       });
